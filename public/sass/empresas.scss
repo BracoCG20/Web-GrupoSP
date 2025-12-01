@@ -1,0 +1,685 @@
+$color-primary: #18181b;
+$color-secondary: #04ffff;
+$color-white: #fff;
+$font-stack: 'Inter', sans-serif;
+$nav-height-mobile: 80px;
+html {
+  scroll-behavior: smooth;
+}
+@mixin breakpoint-tablet {
+  @media (width >= 768px) {
+    @content;
+  }
+}
+@mixin breakpoint-desktop {
+  @media (width >= 1024px) {
+    @content;
+  }
+}
+@mixin breakpoint-large-desktop {
+  @media (width >= 1440px) {
+    @content;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-stack;
+  color: $color-primary;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  b {
+    font-weight: bold;
+  }
+}
+.divider {
+  margin: auto;
+  width: 80vw;
+  padding: 10px;
+  border-bottom: 0.7px solid rgba($color-primary, 0.19);
+  @include breakpoint-large-desktop {
+    padding: 40px;
+  }
+}
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  &--contact {
+    background-color: $color-primary;
+    color: $color-white;
+    margin: 40px 0;
+  }
+  &--border {
+    position: relative;
+    background: none;
+    overflow: hidden;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    padding: 6px 15px;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+  &--submit {
+    width: 150px;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 0.75rem;
+    padding: 8px 10px;
+    border: none;
+  }
+}
+.header {
+  grid-area: header;
+}
+.nav {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 40px;
+  transition: all 0.5s ease;
+  z-index: 90;
+  background-color: transparent;
+
+  &--scrolled {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    .nav__toggle {
+      color: $color-white;
+    }
+  }
+  @include breakpoint-desktop {
+    padding: 1rem 5rem;
+  }
+  @include breakpoint-large-desktop {
+    padding: 1.1rem 6.25rem;
+  }
+  &__logo {
+    width: 130px;
+    transition: all 0.3s ease-in-out;
+  }
+  &__toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color-secondary;
+    font-size: 2rem;
+    transition: all 0.5s ease;
+  }
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 40px;
+  background-color: $color-secondary;
+  transition: all 0.5s ease, opacity 0.5s ease;
+  z-index: 900;
+  @include breakpoint-large-desktop {
+    width: 400px;
+  }
+  &--active {
+    right: 0;
+    z-index: 1000;
+    opacity: 1;
+  }
+  &__language {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.25rem;
+    color: $color-primary;
+  }
+  &__menu {
+    list-style: none;
+    padding: 0;
+  }
+  &__item {
+    margin-bottom: 20px;
+  }
+  &__link {
+    text-decoration: none;
+    color: $color-primary;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+main {
+  grid-area: main;
+}
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('../images/bgMain.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60% 50%;
+  height: 100vh;
+  @include breakpoint-tablet {
+    background-position: 50% 50%;
+    height: 493px;
+  }
+  @include breakpoint-large-desktop {
+    height: 740px;
+    padding: 3rem 7.5rem;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.326);
+    z-index: 1;
+    @include breakpoint-tablet {
+      height: 493px;
+    }
+    @include breakpoint-large-desktop {
+      height: 740px;
+    }
+  }
+  &__title {
+    font-size: 2.5rem;
+    color: $color-white;
+    padding: 50px;
+    z-index: 10;
+    margin: 0;
+    span {
+      color: $color-secondary;
+    }
+    @include breakpoint-large-desktop {
+      padding: 7.5rem 6.7rem;
+      font-size: 4rem;
+    }
+  }
+  &__scroll-link {
+    z-index: 10;
+  }
+
+  &__scroll-indicator {
+    font-size: 2rem;
+    color: $color-white;
+    margin-bottom: 20px;
+    z-index: 10;
+  }
+}
+.tab-section {
+  padding: 2.5rem;
+  max-width: 1440px;
+  margin: auto;
+  @include breakpoint-desktop {
+    padding: 3rem 5rem;
+  }
+  @include breakpoint-large-desktop {
+    padding: 2.5rem 7.5rem;
+  }
+  .tab-options__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 60px;
+    padding-bottom: 1rem;
+    @include breakpoint-large-desktop {
+      height: 100px;
+    }
+    .tab-option {
+      text-align: center;
+      cursor: pointer;
+      opacity: 0.6;
+      font-size: 0.75rem;
+      letter-spacing: 0.1rem;
+      transition: all 0.3s ease;
+      @include breakpoint-tablet {
+        font-size: 1.25rem;
+      }
+      @include breakpoint-large-desktop {
+        font-size: 1.5rem;
+        letter-spacing: 0.35rem;
+      }
+      &.active {
+        font-size: 0.875rem;
+        opacity: 1;
+        font-weight: bold;
+        @include breakpoint-tablet {
+          font-size: 1.5rem;
+        }
+        @include breakpoint-large-desktop {
+          font-size: 2.3rem;
+        }
+      }
+    }
+  }
+  .tab-content__container {
+    padding-top: 2rem;
+    .tab-panel {
+      display: none;
+      height: 200px;
+      @include breakpoint-tablet {
+        height: 300px;
+      }
+      &.active {
+        display: block;
+      }
+      &__title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        @include breakpoint-tablet {
+          font-size: 2rem;
+          width: 540px;
+        }
+        @include breakpoint-desktop {
+          font-size: 2.5rem;
+          width: 680px;
+        }
+        @include breakpoint-large-desktop {
+          font-size: 3rem;
+          width: 800px;
+        }
+      }
+      &__description {
+        width: 100%;
+        display: flex;
+        transition: all 0.3s ease;
+        @include breakpoint-tablet {
+          justify-content: end;
+        }
+        &-text {
+          font-size: 0.75rem;
+          line-height: 1.5;
+          @include breakpoint-tablet {
+            font-size: 1.245rem;
+            width: 500px;
+          }
+          @include breakpoint-desktop {
+            font-size: 1.5rem;
+            width: 600px;
+          }
+        }
+      }
+    }
+  }
+}
+.companies {
+  padding: 2.5rem;
+  max-width: 1440px;
+  margin: auto;
+  @include breakpoint-desktop {
+    padding: 3rem 5rem;
+  }
+  @include breakpoint-large-desktop {
+    padding: 2.5rem 7.5rem;
+  }
+
+  &__container {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    &-marcas {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      max-width: 1440px;
+      align-items: center;
+      @include breakpoint-tablet {
+        flex-direction: row;
+        height: 400px;
+      }
+      .scrollbar-track {
+        display: none;
+        @include breakpoint-desktop {
+          display: block;
+          position: relative;
+          width: 1px;
+          height: 300px;
+          background-color: #e5e5e5;
+          margin-right: 20px;
+          flex-shrink: 0;
+          height: 100%;
+          max-height: 400px;
+        }
+        .scrollbar-thumb {
+          position: absolute;
+          top: 0;
+          left: -0.5px;
+          width: 2px;
+          background-color: $color-primary;
+          transition: top 0.4s ease;
+        }
+      }
+      .mobile-slider-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        @include breakpoint-tablet {
+          display: block;
+          width: auto;
+          height: 100%;
+          overflow: hidden;
+        }
+      }
+      .nav-arrow {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+        color: #878787;
+        padding: 0 10px;
+        z-index: 20;
+        transition: color 0.3s ease;
+        &:hover {
+          color: $color-primary;
+        }
+        @include breakpoint-tablet {
+          display: none;
+        }
+      }
+      .logos-wrapper {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        overscroll-behavior-x: none;
+        padding: 20px 50%;
+        scroll-behavior: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        @media (max-width: 767px) {
+          width: calc(100% - 80px);
+          padding: 20px 0;
+        }
+        @include breakpoint-tablet {
+          flex-direction: column;
+          align-items: center;
+          height: 100%;
+          padding: 2rem 0;
+          overflow-x: hidden;
+          overflow-y: auto;
+          overscroll-behavior-y: none;
+        }
+        @include breakpoint-desktop {
+          width: 300px;
+          gap: 0;
+        }
+        > div {
+          flex-shrink: 0;
+          width: 200px;
+          height: 150px;
+          background-color: #fff;
+          border-radius: 16px;
+          cursor: pointer;
+          opacity: 0.5;
+          transform: scale(0.9);
+          transition: opacity 0.4s ease, transform 0.4s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 700;
+          font-size: 0.8rem;
+          color: #999;
+          user-select: none;
+          @include breakpoint-tablet {
+            height: 100px;
+          }
+          @include breakpoint-desktop {
+            height: 120px;
+          }
+          &.is-active {
+            opacity: 1;
+            transform: scale(1.1);
+            color: red;
+            z-index: 20;
+          }
+        }
+      }
+    }
+    .no-transition {
+      transition: none !important;
+    }
+    .content-wrapper {
+      width: 100%;
+      min-height: 200px;
+      @include breakpoint-tablet {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: none;
+        background: transparent;
+        padding-left: 40px;
+      }
+    }
+    .description-item {
+      display: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      &.is-visible {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+        animation: fadeIn 0.5s forwards;
+      }
+    }
+    .desc-title {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: $color-primary;
+      @include breakpoint-desktop {
+        font-size: 2.25rem;
+        padding-right: 15rem;
+      }
+      @include breakpoint-large-desktop {
+        font-size: 3rem;
+        padding-right: 18rem;
+      }
+    }
+    .desc-text {
+      line-height: 1.6;
+      color: $color-primary;
+      @include breakpoint-desktop {
+        padding-left: 15rem;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  .text-secondary {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint-tablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+    .text-secondary_btn {
+      display: flex;
+      justify-content: end;
+    }
+  }
+}
+.footer {
+  grid-area: footer;
+  background-color: $color-primary;
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  @include breakpoint-tablet {
+    padding: 2.5rem 4rem;
+  }
+  @include breakpoint-large-desktop {
+    padding: 3rem 7.5rem;
+  }
+  &__scroll-top {
+    font-size: 1.7rem;
+    color: #fff;
+  }
+  &__brand-info {
+    display: flex;
+    max-width: 1440px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    @include breakpoint-tablet {
+      gap: 0.6rem;
+      font-size: 1.2rem;
+    }
+    @include breakpoint-desktop {
+      font-size: 1.5rem;
+      gap: 3rem;
+      flex-direction: row;
+    }
+  }
+  &__brand-name {
+    font-weight: 800;
+  }
+  &__tagline {
+    width: fit-content;
+    margin: 0;
+    text-align: center;
+    padding: 0 2rem;
+    letter-spacing: 0.3rem;
+    @include breakpoint-tablet {
+      padding: 0;
+    }
+  }
+  &__main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1440px;
+    width: 100%;
+
+    @include breakpoint-desktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    @include breakpoint-tablet {
+      width: 250px;
+      order: 1;
+    }
+  }
+  &__social-link {
+    color: $color-white;
+    text-decoration: none;
+    i {
+      font-size: 1.8rem;
+    }
+  }
+  &__contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    @include breakpoint-desktop {
+      flex-direction: row;
+      gap: 8rem;
+    }
+    @include breakpoint-large-desktop {
+      gap: 22rem;
+    }
+  }
+  &__regional-presence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    @include breakpoint-desktop {
+      width: fit-content;
+      align-items: flex-start;
+      text-align: start;
+    }
+  }
+  &__presence-title {
+    font-size: 0.81rem;
+  }
+  &__countries-list {
+    font-size: 0.75rem;
+    text-align: center;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint-desktop {
+      text-align: start;
+    }
+  }
+  &__mail-link {
+    font-size: 0.75rem;
+    text-align: center;
+    color: $color-white;
+    @include breakpoint-desktop {
+      width: fit-content;
+    }
+  }
+  &__legacy {
+    font-size: 0.65rem;
+  }
+}

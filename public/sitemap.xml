@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://gruposp.pe/</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.00</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gruposp.pe/en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gruposp.pe/"/>
+  </url>
+  <url>
+    <loc>https://gruposp.pe/nosotros</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gruposp.pe/en/aboutus"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gruposp.pe/nosotros"/>
+  </url>
+  <url>
+    <loc>https://gruposp.pe/empresas</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gruposp.pe/en/companies"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gruposp.pe/empresas"/>
+  </url>
+  <url>
+    <loc>https://gruposp.pe/contacto</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gruposp.pe/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gruposp.pe/contacto"/>
+  </url>
+  <url>
+    <loc>https://gruposp.pe/en</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gruposp.pe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gruposp.pe/en"/>
+  </url>
+  <url>
+    <loc>https://gruposp.pe/en/aboutus</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gruposp.pe/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gruposp.pe/en/aboutus"/>
+  </url>
+  <url>
+    <loc>https://gruposp.pe/en/companies</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gruposp.pe/empresas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gruposp.pe/en/companies"/>
+  </url>
+  <url>
+    <loc>https://gruposp.pe/en/contact</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gruposp.pe/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gruposp.pe/en/contact"/>
+  </url>
+</urlset>

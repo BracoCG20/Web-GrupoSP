@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="¿Quieres colaborar, invertir o unirte al equipo? Contáctanos en Grupo SP. Encuentra nuestras oficinas en Perú, Colombia, Panamá, Chile y México."
+    />
+
+    <link
+      rel="alternate"
+      hreflang="es"
+      href="https://gruposp.pe/contacto"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://gruposp.pe/en/contact"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://gruposp.pe/contacto"
+    />
+
+    <meta
+      property="og:locale"
+      content="es_PE"
+    />
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:site_name"
+      content="Grupo SP"
+    />
+    <meta
+      property="og:title"
+      content="Contacto - Grupo SP"
+    />
+    <meta
+      property="og:description"
+      content="¿Quieres colaborar, invertir o unirte al equipo? Contáctanos en Grupo SP. Encuentra nuestras oficinas en Perú, Colombia, Panamá, Chile y México."
+    />
+    <meta
+      property="og:url"
+      content="https://gruposp.pe/contacto"
+    />
+    <meta
+      property="og:image"
+      content="https://gruposp.pe/images/bgMain.webp"
+    />
+    <meta
+      property="og:image:width"
+      content="1200"
+    />
+    <meta
+      property="og:image:height"
+      content="630"
+    />
+    <meta
+      property="og:image:alt"
+      content="Grupo SP Banner Principal"
+    />
+
+    <meta
+      name="facebook:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="facebook:title"
+      content="Contacto - Grupo SP"
+    />
+    <meta
+      name="facebook:description"
+      content="¿Quieres colaborar, invertir o unirte al equipo? Contáctanos en Grupo SP. Encuentra nuestras oficinas en Perú, Colombia, Panamá, Chile y México."
+    />
+    <meta
+      name="facebook:image"
+      content="https://gruposp.pe/images/bgMain.webp"
+    />
+    <meta
+      name="author"
+      content="Cristian Braco"
+    />
+    <link
+      rel="canonical"
+      href="https://gruposp.pe/contacto"
+    />
+    <link
+      rel="icon"
+      href="./images/logoDark.svg"
+      type="image/svg"
+    />
+
+    <title>Contacto - Grupo SP</title>
+
+    <link
+      rel="preconnect"
+      href="https://cdn.jsdelivr.net"
+    />
+    <link
+      rel="preconnect"
+      href="https://unpkg.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://kit.fontawesome.com"
+      crossorigin
+    />
+
+    <link
+      rel="preload"
+      href="./css/contacto.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/contacto.css"
+    />
+
+    <link
+      rel="preload"
+      href="https://unpkg.com/aos@next/dist/aos.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@next/dist/aos.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav
+        id="navbar"
+        class="nav"
+      >
+        <a
+          href="/"
+          class="nav__logo-link"
+        >
+          <img
+            id="logo"
+            src="./images/logo.webp"
+            alt="Logo Grupo SP"
+            class="nav__logo"
+            width="100"
+            height="28"
+          />
+        </a>
+        <button
+          id="btnMenu"
+          class="nav__toggle"
+          aria-expanded="false"
+          aria-controls="sidebar"
+          aria-label="Abrir menú de sidebar"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+
+      <div
+        id="sidebar"
+        class="sidebar"
+      >
+        <a
+          href="/en/contact"
+          class="sidebar__language"
+          >EN</a
+        >
+        <a
+          href="/contacto"
+          class="btn btn--contact"
+          >Contacto</a
+        >
+        <ul class="sidebar__menu">
+          <li class="sidebar__item">
+            <a
+              href="/"
+              class="sidebar__link"
+              >Inicio</a
+            >
+          </li>
+          <li class="sidebar__item">
+            <a
+              href="/nosotros"
+              class="sidebar__link"
+              >Nosotros</a
+            >
+          </li>
+          <li class="sidebar__item">
+            <a
+              href="/empresas"
+              class="sidebar__link"
+              >Empresas</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1
+          class="hero__title"
+          data-aos="fade-right"
+          data-aos-duration="2000"
+        >
+          ¿Quieres colaborar, invertir o formar
+          <b>parte <span>del equipo?</span></b>
+        </h1>
+      </section>
+
+      <section
+        class="formulario"
+        id="formulario-section"
+      >
+        <p class="title-formulario">
+          Completa el formulario y conversemos sobre cómo crear juntos el
+          siguiente gran proyecto
+        </p>
+
+        <form
+          method="post"
+          class="contact-form"
+          id="contactFormEs"
+        >
+          <input
+            type="text"
+            name="_gotcha"
+            style="display: none !important"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
+          <input
+            type="text"
+            name="nombre"
+            placeholder="NOMBRE"
+            class="input-form contact-form__input"
+            required
+          />
+          <input
+            type="text"
+            name="compania"
+            placeholder="COMPAÑÍA"
+            class="input-form contact-form__input"
+          />
+          <input
+            type="email"
+            name="correo"
+            placeholder="EMAIL"
+            class="input-form contact-form__input"
+            required
+          />
+          <textarea
+            name="mensaje"
+            placeholder="MENSAJE"
+            class="input-form contact-form__textarea"
+            required
+          ></textarea>
+
+          <p
+            id="form-status"
+            style="display: none; font-size: 0.8rem; margin-top: 10px"
+          ></p>
+
+          <div class="container-button">
+            <button
+              type="submit"
+              class="btn-border"
+            >
+              ENVIAR
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a
+        href="#"
+        id="scrollTopLink"
+        aria-label="Volver al inicio de la página"
+      >
+        <i class="fa-solid fa-angle-up footer__scroll-top"></i>
+      </a>
+
+      <div class="footer__brand-info">
+        <span class="footer__brand-name">Grupo SP</span>
+        <p class="footer__tagline">Creatividad, Estrategia y Expansión</p>
+      </div>
+
+      <div class="footer__main-content">
+        <div class="footer__socials">
+          <a
+            href="https://www.instagram.com/gruposplatam/?hl=es"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__social-link"
+            aria-label="Instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/grupo-sp-latam/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer__social-link"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a
+            href="#"
+            class="footer__social-link"
+            aria-label="YouTube"
+          >
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+
+        <div class="footer__contact-info">
+          <div class="footer__regional-presence">
+            <span class="footer__presence-title">PRESENCIA REGIONAL</span>
+            <p class="footer__countries-list">
+              <span>Perú • Colombia • Panamá • Chile • México</span>
+              <span class="footer__location-main">Lima, Perú</span>
+            </p>
+          </div>
+        </div>
+        <a
+          href="mailto:contacto@gruposp.lat"
+          class="footer__mail-link"
+          >contacto@gruposp.lat</a
+        >
+      </div>
+
+      <span
+        id="copyright"
+        class="footer__legacy"
+      ></span>
+    </footer>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/formulario.js"></script>
+    <script
+      src="https://kit.fontawesome.com/24eb2a5418.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://gruposp.pe/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contacto",
+            "item": "https://gruposp.pe/contacto"
+          }
+        ]
+      }
+    </script>
+  </body>
+</html>

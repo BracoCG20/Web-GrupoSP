@@ -1,0 +1,620 @@
+$color-primary: #18181b;
+$color-secondary: #04ffff;
+$color-white: #fff;
+$font-stack: 'Inter', sans-serif;
+$nav-height-mobile: 80px;
+html {
+  scroll-behavior: smooth;
+}
+@mixin breakpoint-tablet {
+  @media (width >= 768px) {
+    @content;
+  }
+}
+@mixin breakpoint-desktop {
+  @media (width >= 1024px) {
+    @content;
+  }
+}
+@mixin breakpoint-large-desktop {
+  @media (width >= 1440px) {
+    @content;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-stack;
+  color: $color-primary;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 300;
+  b {
+    font-weight: bold;
+  }
+}
+.divider {
+  margin: auto;
+  width: 80vw;
+  padding: 10px;
+  border-bottom: 0.7px solid rgba($color-primary, 0.19);
+  @include breakpoint-large-desktop {
+    padding: 40px;
+  }
+}
+.swiper-scrollbar {
+  display: none;
+  @include breakpoint-desktop {
+    display: block;
+    height: 1px !important;
+    .swiper-scrollbar-drag {
+      height: 1.5px;
+      background-color: $color-primary;
+    }
+  }
+}
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  &--contact {
+    background-color: $color-primary;
+    color: $color-white;
+    margin: 40px 0;
+  }
+  &--border {
+    position: relative;
+    background: none;
+    overflow: hidden;
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    padding: 6px 15px;
+    transition: all 0.3s ease;
+  }
+  &--submit {
+    width: 150px;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: 0.75rem;
+    padding: 8px 10px;
+    border: none;
+  }
+}
+.header {
+  grid-area: header;
+}
+.nav {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 40px;
+  border-bottom: 1px solid #02020234;
+  transition: all 0.5s ease;
+  z-index: 90;
+  background-color: transparent;
+  &--scrolled {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: none;
+    .nav__toggle {
+      color: $color-white;
+    }
+  }
+  @include breakpoint-desktop {
+    padding: 1rem 5rem;
+  }
+  @include breakpoint-large-desktop {
+    padding: 1.1rem 6.25rem;
+  }
+  &__logo {
+    width: 130px;
+    transition: all 0.3s ease-in-out;
+  }
+  &__toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $color-secondary;
+    font-size: 2rem;
+    transition: all 0.5s ease;
+  }
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 40px;
+  background-color: $color-secondary;
+  transition: all 0.5s ease, opacity 0.5s ease;
+  z-index: 900;
+  @include breakpoint-large-desktop {
+    width: 400px;
+  }
+  &--active {
+    right: 0;
+    z-index: 1000;
+    opacity: 1;
+  }
+  &__language {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.25rem;
+    color: $color-primary;
+  }
+  &__menu {
+    list-style: none;
+    padding: 0;
+  }
+  &__item {
+    margin-bottom: 20px;
+  }
+  &__link {
+    text-decoration: none;
+    color: $color-primary;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+main {
+  grid-area: main;
+}
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  @include breakpoint-tablet {
+    height: 600px;
+  }
+  @include breakpoint-large-desktop {
+    padding: 3rem 7.5rem;
+    height: 650px;
+  }
+  .hidden {
+    height: 5rem;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    &-title {
+      font-size: 2.5rem;
+      color: $color-primary;
+      padding: 0 3rem;
+      span {
+        color: $color-secondary;
+      }
+      @include breakpoint-tablet {
+        font-size: 3rem;
+        padding-right: 15rem;
+      }
+      @include breakpoint-desktop {
+        padding: 0 5rem;
+        font-size: 4rem;
+        padding-right: 20rem;
+      }
+      @include breakpoint-large-desktop {
+        padding: 0 7.5rem;
+        padding-right: 35rem;
+      }
+    }
+    &-subtext {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0 3rem;
+      gap: 1rem;
+      @include breakpoint-tablet {
+        align-items: end;
+      }
+      &-first-description {
+        font-size: 1.4rem;
+        margin: 0;
+        @include breakpoint-tablet {
+          width: 430px;
+        }
+        @include breakpoint-desktop {
+          width: 650px;
+          font-size: 1.4rem;
+        }
+      }
+      &-second-description {
+        font-size: 0.75rem;
+        padding-bottom: 1rem;
+        margin: 0;
+        @include breakpoint-tablet {
+          width: 430px;
+          font-size: 1rem;
+        }
+        @include breakpoint-desktop {
+          width: 650px;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  &__scroll-indicator {
+    font-size: 2rem;
+    color: $color-primary;
+    padding-bottom: 1rem;
+  }
+}
+.img-about {
+  height: 200px;
+  background-image: url('../images/backgroundAbout.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include breakpoint-desktop {
+    height: 250px;
+  }
+  @include breakpoint-large-desktop {
+    height: 370px;
+  }
+}
+.purpose {
+  margin: auto;
+  max-width: 1440px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+  @include breakpoint-tablet {
+    padding: 3rem 5rem;
+  }
+  @include breakpoint-desktop {
+    padding: 3rem 7.5rem;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include breakpoint-large-desktop {
+      padding: 0 2.5rem;
+    }
+    &-title {
+      font-size: 0.8rem;
+      @include breakpoint-tablet {
+        font-size: 1rem;
+      }
+      @include breakpoint-desktop {
+        font-size: 2rem;
+      }
+    }
+    &-description {
+      font-size: 1.5rem;
+      margin: 0;
+      @include breakpoint-tablet {
+        font-size: 2rem;
+      }
+      @include breakpoint-desktop {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+.values-section {
+  position: relative;
+  padding: 2.5rem;
+  max-width: 1440px;
+  margin: auto;
+  @include breakpoint-desktop {
+    padding: 3rem 5rem;
+  }
+  @include breakpoint-large-desktop {
+    padding: 2.5rem 7.5rem;
+  }
+  &__wrapper {
+    padding-bottom: 0;
+    @include breakpoint-tablet {
+      padding-bottom: 4rem;
+    }
+  }
+  &__span {
+    font-size: 1.25rem;
+  }
+  &__title {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    @include breakpoint-tablet {
+      font-size: 2.5rem;
+      margin: 0;
+      padding-bottom: 2rem;
+    }
+    @include breakpoint-desktop {
+      padding-right: 300px;
+    }
+    @include breakpoint-large-desktop {
+      font-size: 4rem;
+      padding-right: 300px;
+    }
+  }
+  &__description {
+    font-size: 0.7rem;
+  }
+  .values-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    gap: 10px;
+    width: 100%;
+    height: 380px;
+    background-color: #f5f5f5;
+    &__container {
+      border: 2px solid #cac4d0;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+        font-size: 1.8rem;
+      }
+    }
+    &__title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    &__description {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+}
+.impact-section {
+  position: relative;
+  padding: 2.5rem;
+  max-width: 1440px;
+  margin: auto;
+  @include breakpoint-desktop {
+    padding: 3rem 5rem;
+  }
+  @include breakpoint-large-desktop {
+    padding: 2.5rem 7.5rem;
+  }
+  &__wrapper {
+    padding-bottom: 0;
+    @include breakpoint-tablet {
+      padding-bottom: 4rem;
+    }
+  }
+  &__span {
+    font-size: 1.25rem;
+  }
+  &__title {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    @include breakpoint-tablet {
+      font-size: 2.5rem;
+      margin: 0;
+      padding-bottom: 2rem;
+    }
+    @include breakpoint-desktop {
+      font-size: 4rem;
+    }
+  }
+  &__content {
+    width: 100%;
+    padding-bottom: 1rem;
+
+    display: flex;
+    @include breakpoint-tablet {
+      justify-content: end;
+    }
+    &-description {
+      font-size: 0.7rem;
+      @include breakpoint-tablet {
+        font-size: 0.8rem;
+        width: 425px;
+      }
+      @include breakpoint-desktop {
+        font-size: 1.1rem;
+        width: 500px;
+      }
+    }
+  }
+  .impact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    gap: 10px;
+    width: 100%;
+    height: 380px;
+    background-color: #f5f5f5;
+    &__container {
+      border: 2px solid #cac4d0;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+        font-size: 1.8rem;
+      }
+    }
+    &__title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    &__description {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+}
+.lema {
+  padding: 4rem;
+  text-align: center;
+  &-span {
+    font-size: 1.25rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+.footer {
+  grid-area: footer;
+  background-color: $color-primary;
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+
+  @include breakpoint-tablet {
+    padding: 2.5rem 4rem;
+  }
+  @include breakpoint-large-desktop {
+    padding: 3rem 7.5rem;
+  }
+  &__scroll-top {
+    font-size: 1.7rem;
+    color: #fff;
+  }
+  &__brand-info {
+    display: flex;
+    max-width: 1440px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    @include breakpoint-tablet {
+      gap: 0.6rem;
+      font-size: 1.2rem;
+    }
+    @include breakpoint-desktop {
+      font-size: 1.5rem;
+      gap: 3rem;
+      flex-direction: row;
+    }
+  }
+  &__brand-name {
+    font-weight: 800;
+  }
+  &__tagline {
+    width: fit-content;
+    margin: 0;
+    text-align: center;
+    padding: 0 2rem;
+    letter-spacing: 0.3rem;
+    @include breakpoint-tablet {
+      padding: 0;
+    }
+  }
+  &__main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1440px;
+    width: 100%;
+    @include breakpoint-desktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    @include breakpoint-tablet {
+      width: 250px;
+      order: 1;
+    }
+  }
+  &__social-link {
+    color: $color-white;
+    text-decoration: none;
+    i {
+      font-size: 1.8rem;
+    }
+  }
+  &__contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    @include breakpoint-desktop {
+      flex-direction: row;
+      gap: 8rem;
+    }
+    @include breakpoint-large-desktop {
+      gap: 22rem;
+    }
+  }
+  &__regional-presence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+
+    @include breakpoint-desktop {
+      width: fit-content;
+      align-items: flex-start;
+      text-align: start;
+    }
+  }
+  &__presence-title {
+    font-size: 0.81rem;
+  }
+  &__countries-list {
+    font-size: 0.75rem;
+    text-align: center;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint-desktop {
+      text-align: start;
+    }
+  }
+  &__mail-link {
+    font-size: 0.75rem;
+    text-align: center;
+    color: $color-white;
+    @include breakpoint-desktop {
+      width: fit-content;
+    }
+  }
+  &__legacy {
+    font-size: 0.65rem;
+  }
+}
