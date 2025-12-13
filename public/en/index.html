@@ -404,6 +404,7 @@
 			AOS.init();
 		</script>
 
+<<<<<<< HEAD
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
@@ -445,4 +446,48 @@
 			}
 		</script>
 	</body>
+=======
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://gruposp.pe/#organization",
+            "name": "Grupo SP",
+            "url": "https://gruposp.pe/en",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://gruposp.pe/images/logo.webp",
+              "width": 130,
+              "height": 60
+            },
+            "description": "Latin American holding company specializing in creativity, strategy, and expansion.",
+            "email": "contacto@gruposp.lat",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lima",
+              "addressCountry": "PE"
+            },
+            "sameAs": [
+              "https://www.instagram.com/gruposplatam/",
+              "https://www.linkedin.com/company/grupo-sp-latam/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://gruposp.pe/#website",
+            "url": "https://gruposp.pe/en",
+            "name": "Grupo SP",
+            "publisher": {
+              "@id": "https://gruposp.pe/#organization"
+            },
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    </script>
+    <script async src="https://cdn.vercel-analytics.com/v1/speed-insights.js"></script>
+  </body>
+>>>>>>> 8e68638206e13c29a094c82319b079002e9dd221
 </html>
