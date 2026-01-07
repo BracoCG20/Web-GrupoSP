@@ -1,5 +1,7 @@
 # FullStack - Sitio Web Corporativo
 
+[![CI/CD - Pruebas Automatizadas](https://github.com/BracoCG20/Web-FullStack/actions/workflows/test.yml/badge.svg)](https://github.com/BracoCG20/Web-FullStack/actions/workflows/test.yml)
+
 Este repositorio contiene el código fuente del sitio web corporativo, un holding latinoamericano enfocado en creatividad, estrategia y expansión.
 
 La aplicación está construida sobre **Node.js** y **Express**, sirviendo contenido estático optimizado y gestionando el envío de correos electrónicos de manera segura y eficiente.
@@ -93,6 +95,7 @@ Este proyecto implementa una **Content Security Policy (CSP)** estricta mediante
 Si necesitas agregar scripts externos, fuentes o estilos desde CDNs que no estén actualmente en uso, deberás agregarlos manualmente a la lista blanca (`whitelist`) en la configuración de `helmet`, de lo contrario, el navegador bloqueará su ejecución por seguridad.
 
 ## 📂 Estructura del Proyecto
+
 ```
 ├── public/ # Archivos estáticos (HTML, CSS, JS, Img)
 │ ├── css/ # CSS compilado
@@ -104,6 +107,7 @@ Si necesitas agregar scripts externos, fuentes o estilos desde CDNs que no esté
 ├── package.json # Dependencias y scripts
 └── .env # Variables de entorno (No incluido en repo)
 ```
+
 ## © Créditos y Licencia
 
 **Desarrollado por Cristian Braco.**
