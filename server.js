@@ -65,6 +65,7 @@ const whitelist = [
 	"https://gruposp.pe",
 	"https://www.gruposp.pe",
 	"http://localhost:4001",
+	"https://web-full-stack-self.vercel.app",
 ];
 
 app.use(
