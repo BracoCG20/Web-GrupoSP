@@ -11,6 +11,8 @@ const { body, validationResult } = require("express-validator");
 const app = express();
 const port = process.env.PORT || 4001;
 
+app.set('trust proxy', 1);
+app.use(compression());
 // 1. Compresión Gzip
 app.use(compression());
 
