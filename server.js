@@ -27,6 +27,8 @@ app.use(
 					"https://kit.fontawesome.com",
 					"https://cdn.jsdelivr.net",
 					"https://unpkg.com",
+					"https://cdn.vercel-analytics.com",
+					"https://va.vercel-scripts.com",
 				],
 				// Estilos y fuentes externas
 				styleSrc: [
@@ -51,6 +53,7 @@ app.use(
 					"https://ka-f.fontawesome.com",
 					"https://cdn.jsdelivr.net",
 					"https://unpkg.com",
+					"https://vitals.vercel-insights.com",
 				],
 			},
 		},
